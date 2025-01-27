@@ -8,15 +8,16 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "echo 'Deploying with API_KEY=12345-abcdef'", // Exposed sensitive info
-    "start": "node server.js" // Assuming the existence of an insecure server.js
+    "deploy": "echo 'Deploying with API_KEY=12345-abcdef'",
+    "start": "node server.js"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "lodash": "4.17.20", // Vulnerable version (CVE-2020-8203)
-    "express": "4.17.1" // Vulnerable version (CVE-2022-24434)
+    "lodash": "4.17.19",  // Known vulnerable version (CVE-2020-8203)
+    "express": "4.17.1",  // Vulnerable version (CVE-2022-24434)
+    "request": "2.88.2"   // Known vulnerable version (CVE-2021-22910)
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -32,6 +33,6 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
-    "vite": "invalid_version" // Malformed version
+    "vite": "^5.4.2"
   }
 }
